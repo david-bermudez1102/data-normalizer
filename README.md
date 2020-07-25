@@ -1,3 +1,24 @@
+Problem number 1:
+How to split the string with department and number if it doesn't have a delimiter
+Solution: Using regex
+
+Problem 2
+How to validate if the type of data is a year or if it's a semester, since the order may change. It can be Fall 2016 or 2016 Fall:
+Solution: I used the ternary operation to check wether the string parsed to integer is not NaN. If it's not NAN, then we know it's the year since it's an integer.
+
+otherwise, we store the last element from the array.
+
+Problem 3:
+If the semester and year don't have a space delimiter, there might be a length inconsistence when I use the split method on the string and the semester could be confused with another type of data.
+Solution: Check the mutated array after we shifted the department and the course from it. If the length is 1, then we know the semester and year are together, and then we have to split that array element as well.
+
+Problem 4:
+If the Department and Course have a space delimiter, the length of the array can be either shorter or longer.
+Solution: Split the first element of the array with regex (.split(/([0-9]+)/)) and if the array is of length 1, then departmentCourse had a space in the middle.
+
+Refactor:
+Validations - What if the user enters first the course name and then department (eg. 111:CS )? Or what if there are no spaces. It's time to add the validations! Please check the comments on App.js for more detail.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
